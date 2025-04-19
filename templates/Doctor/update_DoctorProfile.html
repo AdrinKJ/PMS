@@ -1,0 +1,92 @@
+{% extends "Doctor/common.html" %}
+{% block content %}
+        {% load static %}
+        <div class="back-to-home rounded d-none d-sm-block">
+            <a href="index.html" class="btn btn-icon btn-primary"><i data-feather="home" class="icons"></i></a>
+        </div>
+
+        <section class="bg-half-150 d-table w-100 bg-light" style="background: url('{% static '/assets/images/bg/bg-lines-one.png' %}') center;">
+            <div class="container">
+                <div class="row justify-content-center">
+                    
+                    <div class="col-lg-9 col-md-12">
+                        <img src="../assets/images/logo-dark.png" height="22" class="mx-auto d-block" alt="">
+                        <div class="card login-page shadow mt-4 rounded border-0">
+                            <div class="card-body">
+                                <h4 class="text-center">Doctor Registration</h4>   
+                                <form  method="POST" class="login-form mt-4" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    {% for i in data %}
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="mb-3">                                                
+                                                <label class="form-label">Name <span class="text-danger">*</span></label>
+                                                <input type="text" value="{{i.name}}" class="form-control" placeholder="Name" name="name" required>
+                                            </div>
+                                        </div>
+                                        {% comment %} <div class="col-md-12">
+                                            <div class="mb-3">
+                                                <label class="form-label">Email <span class="text-danger">*</span></label>
+                                                <input type="email"  class="form-control" placeholder="Email" name="email" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="mb-3">
+                                                <label class="form-label">Password <span class="text-danger">*</span></label>
+                                                <input type="password" class="form-control" id="inputPassword" placeholder="Password" required
+                                                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                                title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                                                name="password">
+                                            </div>
+                                        </div> {% endcomment %}
+                                        {% comment %} <div class="col-md-12">
+                                            <div class="mb-3">
+                                                <label class="form-label">Password <span class="text-danger">*</span></label>
+                                                <input type="Password" class="form-control" placeholder="password" name="password" required>
+                                            </div>
+                                        </div> {% endcomment %}
+                                        <div class="col-md-12">
+                                            <div class="mb-3">
+                                                <label class="form-label">Phone <span class="text-danger">*</span></label>
+                                                <input type="text" value="{{i.phone}}" class="form-control" name="phone" placeholder="Phone" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="mb-3">
+                                                <label class="form-label">Address <span class="text-danger">*</span></label>
+                                                <input type="text" value="{{i.address}}" class="form-control" name="address" placeholder="Address" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="mb-3">
+                                                <label class="form-label">Specialization <span class="text-danger">*</span></label>
+                                                <input type="text" value="{{i.specialization}}" class="form-control" name="specialization" placeholder="Specialization" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="mb-3">
+                                                <label class="form-label">Medical License Number <span class="text-danger">*</span></label>
+                                                <input type="text" value="{{i.medical_license_number}}" class="form-control" name="medical_license_number" placeholder="License Number" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="mb-3">
+                                                <label class="form-label">Profile Image <span class="text-danger">*</span></label>
+                                                <input type="file" value="{{i.image}}" name="image" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="d-grid">
+                                                <button class="btn btn-primary">Update</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </form>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div> 
+        </section>
+{% endblock %}

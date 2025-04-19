@@ -1,0 +1,40 @@
+{% extends "Doctor/common.html" %}
+{% block content %}
+
+<div class="container mt-4">
+    
+
+    <!-- Search Form -->
+    <form method="GET" action="{% url 'dr_viewMedicine' %}" class="mb-4">
+        <div class="input-group">
+            <input type="text" name="q" class="form-control" placeholder="Search Medicine..." value="{{ query }}">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+    </form>
+
+    <!-- Medicine List -->
+    <div class="row">
+        {% for i in data %}
+        <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2">
+            <div class="card shop-list border-0">
+                <div class="shop-image position-relative overflow-hidden rounded shadow">
+                    <a><img src="/static/assets/{{ i.image }}" class="img-fluid" alt=""></a>
+                </div>
+                <div class="card-body content pt-4 p-2">
+                    <h6 class="text-dark product-name">{{ i.name }}</h6>
+                    <p class="text-muted small">Price: {{ i.price }}</p>
+                    <p class="text-muted small">Quantity: {{ i.qty }}</p>
+                    <p class="text-muted small">Expiry: {{ i.expiry }}</p>
+                    <div class="mt-2">
+                        <a href="/dr_viewMedicinedetails?id={{ i.id }}" class="btn btn-primary">View</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p class="text-center text-danger">No medicines found.</p>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

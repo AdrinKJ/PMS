@@ -1,0 +1,93 @@
+{% extends "User/common.html" %}
+{% block content %}
+
+<section class="section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card border-0 shadow rounded overflow-hidden">
+                    <ul class="nav nav-pills nav-justified flex-column flex-sm-row rounded-0 shadow overflow-hidden bg-light mb-0" id="pills-tab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link rounded-0 active" id="clinic-booking" data-bs-toggle="pill" href="#pills-clinic" role="tab" aria-controls="pills-clinic" aria-selected="false">
+                                <div class="text-center pt-1 pb-1">
+                                    <h5 class="fw-medium mb-0">Clinic Appointment</h5>
+                                </div>
+                            </a><!--end nav link-->
+                        </li><!--end nav item-->
+                        
+                        
+                    </ul>
+
+                    <div class="tab-content p-4" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="pills-clinic" role="tabpanel" aria-labelledby="clinic-booking">
+                            <form method="POST">
+                                {% csrf_token %}
+                                <div class="row">
+                                    {% comment %} <div class="col-lg-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Patient Name <span class="text-danger">*</span></label>
+                                            <input name="name" id="name" type="text" class="form-control" placeholder="Patient Name :">
+                                        </div>
+                                    </div><!--end col--> {% endcomment %}
+                                  
+                                    {% comment %} <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="pharmacist" class="form-label">Select Department</label>
+                                            <select name="dr" class="form-control" id="pharmacist" required>
+                                              {% for i in drs %}
+                                                <option value="{{ i.id }}">{{ i.specialization }} </option>
+                                              {% endfor %}
+                                            </select>
+                                        </div>
+                                    </div><!--end col--> {% endcomment %}
+                                    
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="pharmacist" class="form-label">Select Doctors</label>
+                                            <select name="dr" class="form-control" id="pharmacist" required>
+                                            {% for i in drs %}
+                                                <option value="{{ i.id }}">{{ i.name }} </option>
+                                            {% endfor %}
+                                            </select>       
+                                        </div>
+                                    </div><!--end col-->
+                                    
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label class="form-label">Booking Date <span class="text-danger">*</span></label>
+                                            <input name="date" id="email" type="date" class="form-control" placeholder="Your email :">
+                                        </div> 
+                                    </div><!--end col-->
+    
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label class="form-label">Booking Time <span class="text-danger">*</span></label>
+                                            <input name="time" id="phone" type="time" class="form-control" placeholder="Your Phone :">
+                                        </div> 
+                                    </div><!--end col-->
+    
+                                    <div class="col-lg-12">
+                                        <div class="mb-3">
+                                            <label class="form-label">Comments <span class="text-danger">*</span></label>
+                                            <textarea name="desc" id="comments" rows="4" class="form-control" placeholder="Your Message :"></textarea>
+                                        </div>
+                                    </div><!--end col-->
+    
+                                    <div class="col-lg-12">
+                                        <div class="d-grid">
+                                            <button type="submit" class="btn btn-primary">Book An Appointment</button>
+                                        </div>
+                                    </div><!--end col-->
+                                </div><!--end row-->
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div><!--end col-->
+        </div><!--end row-->
+    </div><!--end container-->
+</section>
+
+
+{% endblock  %}

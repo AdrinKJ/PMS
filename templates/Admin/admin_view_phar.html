@@ -1,0 +1,83 @@
+{% extends "Admin/common.html" %}
+{% block content %}
+
+
+<!-- End Hero -->
+
+<!-- Start -->
+<section class="section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-12">
+                <div class="card team border-0 rounded shadow overflow-hidden">
+                    <div class="row align-items-center">
+                    {% for i in data%}
+                        <div class="col-md-6">
+                           
+                            <div class="team-person position-relative overflow-hidden">
+                                <img src="/static/assets/{{i.image}}" class="img-fluid" alt="">
+                                <ul class="list-unstyled team-like">
+                                    <li><a  class="btn btn-icon btn-pills btn-soft-danger"><i data-feather="heart" class="icons"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card-body">
+                                <a href="#" class="title text-dark h5 d-block mb-0">{{i.name}}</a>
+                                <small class="text-muted speciality">{{i.pharmacy_name}}</small>
+                                {% comment %} <div class="d-flex justify-content-between align-items-center mt-2">
+                                    <ul class="list-unstyled mb-0">
+                                        <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                        <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                        <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                        <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                        <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                    </ul>
+                                    <p class="text-muted mb-0">5 Star</p>
+                                </div> {% endcomment %}
+                                <ul class="list-unstyled mt-2 mb-0">
+                                    <li class="d-flex">
+                                        <i class="ri-map-pin-line text-primary align-middle"></i>
+                                        <small class="text-muted ms-2">{{i.address}}</small>
+                                    </li>
+                                    <li class="d-flex mt-2">
+                                        <i class="ri-phone-line text-primary align-middle"></i>
+                                        <small class="text-muted ms-2">{{i.phone}}</small>
+                                    </li>
+                                    <li class="d-flex mt-2">
+                                        <i class="ri-circle-line text-primary align-middle"></i>
+                                        <small class="text-muted ms-2">{{i.pharmacy_license_number}}</small>
+                                    </li>
+                                </ul>
+
+                                {% if i.loginId.is_active == 0 %}
+                                <a href="/accept_pharma?did={{i.loginId_id}}" class="btn btn-primary">Approve</a> 
+                                <a href="/reject_pharma?did={{i.loginId_id}}" class="btn btn-danger">Reject</a><br>
+
+                                {% elif i.loginId.is_active == 1 %}
+              
+                                <a class="icon-btn">Approved <i class="fas fa-plus"></i></a>
+                                <br><br>
+                                <a href="/reject_pharma?did={{i.loginId_id}}" class="btn btn-danger">Reject</a><br>
+                                {% else %}
+              
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div><!--end col-->
+            
+            
+            
+            
+           
+            
+            
+            
+            
+        </div><!--end row-->
+    </div><!--end container-->
+</section>
+{% endblock  %}

@@ -1,0 +1,63 @@
+{% extends 'Doctor/common.html' %}
+{% load static %}
+{% block content %}
+<br><br><br><br>
+
+<section class="space-ptb">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                <div class="section-title center-divider text-center">
+                    <span>Check out our</span>
+                    <h2>Latest Appointments</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <!-- Blog-01 START -->
+            {% for i in view %}
+            {% if i.status == "Booked" %}
+            <div class="col-lg-4 col-md-6">
+                <div class="blog-post blog-post-01">
+                    <div class="blog-post-image mb-4">
+                        <img class="img-fluid" src="/static/assets/{{i.uid.image}}" alt="">
+                    </div>
+                    <div class="blog-post-content py-0">
+                        <div class="blog-post-details">
+                            <center>
+                                <h6 class="blog-post-title"><a href="blog-detail.html">{{i.uid.name}}</a></h6>
+                                <div class="blog-post-meta">
+                                    
+                                    <div class="blog-post-time">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Time : <i class="far fa-clock text-primary"></i>{{i.time}}</a>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Date : <i class="far fa-calender text-primary"></i>{{i.date}}</a>
+                                    </div>
+                                </div>
+                                <div class="blog-post-description">
+                                    <p>Issue : {{i.desc}}</p>
+                                   
+                                    <a href="/accept_bookings?bid={{i.id}}" class="btn btn-success mb-2">Accept</a>
+                                    <a href="/decline_booking?bid={{i.id}}" class="btn btn-danger mb-2">Decline</a>
+                                    {% comment %} {% elif i.status == "Accepted" %}
+                                    <a href="/accept_booking?bid={{i.id}}" class="btn btn-primary mb-2">Accepted</a>
+                                    <a href="/" class="btn btn-primary mb-2">Accepted</a>
+                                    {% else %} {% endcomment %}
+                                    {% comment %} <p>Completed</p> {% endcomment %}
+                                    {% endif %}
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <!-- Blog-01 END -->
+
+            <!-- Blog-02 START -->
+
+            <!-- Blog-03 END -->
+        </div>
+    </div>
+</section>
+
+{% endblock %}

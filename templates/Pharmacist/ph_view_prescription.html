@@ -1,0 +1,43 @@
+{% extends 'Pharmacist/common.html' %}
+{% block content %}
+
+<div class="container mt-4">
+    <h2 class="text-center">Prescriptions Assigned to You</h2>
+    <hr>
+
+    {% if data %}
+    <table class="table table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>Date</th>
+                <th>Patient Name</th>
+                <th>Doctor</th>
+                <th>Medicines</th>
+                <th>Instructions</th>
+                <th>Sale</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for prescription in data %}
+            <tr>
+                <td>{{ prescription.date|date:"d M Y" }}</td>
+                <td>{{ prescription.uid.name }}</td>
+                <td>{{ prescription.doctor.name }}</td>
+                <td>{{ prescription.medicines }}</td>
+                <td>{{ prescription.instructions }}</td>
+                <br>
+                {% comment %} {% if i.%} {% endcomment %}
+        <td>
+            <a href="/sales_Medicine?id={{prescription.id}}" class="btn btn-primary mx-2">Sale Medicine</a>
+        
+        </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p class="text-center text-danger">No prescriptions assigned to you.</p>
+    {% endif %}
+</div>
+
+{% endblock %}

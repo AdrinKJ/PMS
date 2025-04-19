@@ -1,0 +1,39 @@
+{% extends "Admin/common.html" %}
+{% block content %}
+
+<div class="container mt-5">
+    {% comment %} <h2 class="text-center">Profit Report for {{ pharmacist.name }}</h2> {% endcomment %}
+    <hr>
+    
+    <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>Medicine Name</th>
+                <th>Quantity Sold</th>
+                <th>pharmacist Name</th>
+                <th>Profit (₹)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in data %}
+            <tr>
+                <td>{{ order.mid.name }}</td>
+                <td>{{ order.qty }}</td>
+                <td>{{ order.Pharmacist.name}}</td>
+                <td>₹{{ order.profit }}</td>
+            </tr>
+            {% endfor %}
+            {% comment %} {% empty %} {% endcomment %}
+            {% comment %} <tr>
+                <td colspan="3" class="text-center">No sales recorded yet.</td>
+            </tr> {% endcomment %}
+            
+        </tbody>
+    </table>
+
+    {% comment %} <div class="text-center mt-4">
+        <h3 class="text-success">Total Profit: ₹{{ total_profit }}</h3>
+    </div> {% endcomment %}
+</div>
+
+{% endblock %}

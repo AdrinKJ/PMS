@@ -1,0 +1,75 @@
+{% extends 'User/common.html' %}
+{% block content %}
+
+<br><br>
+<div class="container mt-4">
+    <div class="prescription-card" style="max-width: 700px; margin: auto; border: 2px solid #444; border-radius: 8px; padding: 20px; background: #fff;">
+        
+        <!-- Header (Clinic/Hospital Details) -->
+        <div class="header text-center mb-4">
+            <h2 style="margin: 0; font-size: 26px; font-weight: bold; color: #333;">Medical Prescription</h2>
+            <p style="font-size: 16px; color: #666;">XYZ Hospital & Clinic</p>
+            <p style="font-size: 14px; color: #888;">123 Street Name, City, State - 567890</p>
+            <hr style="border-top: 2px solid #444;">
+        </div>
+
+        {% for i in data %}
+        <!-- Doctor & Patient Details -->
+        <div class="details mb-4">
+            <h4 style="margin: 0; font-size: 18px; font-weight: bold; color: #333;">Doctor Details</h4>
+            <p style="margin: 5px 0;"><strong> {{ i.doctor.name }}</strong></p>
+            <p style="margin: 5px 0;"><strong>Specialization:</strong> {{ i.doctor.specialization }}</p>
+            <p style="margin: 5px 0;"><strong>Date:</strong> {{ i.date | date:"d M Y" }}</p>
+        </div>
+
+        <div class="details mb-4">
+            <h4 style="margin: 0; font-size: 18px; font-weight: bold; color: #333;">Patient Details</h4>
+            <p style="margin: 5px 0;"><strong>Name:</strong> {{ i.uid.name }}</p>
+            <p style="margin: 5px 0;"><strong>Age:</strong> {{ i.uid.age }} years</p>
+            <p style="margin: 5px 0;"><strong>Phone:</strong> {{ i.uid.phone }}</p>
+            <hr style="border-top: 2px dashed #444;">
+        </div>
+
+        <!-- Medicines Table -->
+        <div class="medicine-details mb-4">
+            <h4 style="margin: 0; font-size: 18px; font-weight: bold; color: #333;">Prescribed Medicines</h4>
+            <table class="table table-bordered" style="width: 100%; border-collapse: collapse;">
+                <thead>
+                    <tr style="background: #444; color: white; text-align: left;">
+                        <th style="padding: 8px;">Medicine Name</th>
+                        <th style="padding: 8px;">Dosage</th>
+                        <th style="padding: 8px;">Frequency</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 8px;">{{i.medicines }}</td>
+                        <td style="padding: 8px;">1 Tablet</td> <!-- Example dosage -->
+                        <td style="padding: 8px;">Twice a day</td> <!-- Example frequency -->
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Additional Instructions -->
+        <div class="instructions mb-4">
+            <h4 style="margin: 0; font-size: 18px; font-weight: bold; color: #333;">Additional Instructions</h4>
+            <p style="padding: 10px; background: #f8f9fa; border-radius: 5px;">{{ i.instructions }}</p>
+        </div>
+
+        <br><br>
+       
+
+        <hr style="border-top: 2px solid #444; margin-top: 20px;">
+        <div class="footer text-end">
+            <p style="font-size: 16px; font-weight: bold; color: #333;">Dr. {{ i.doctor.name }}</p>
+            {% comment %} <p style="font-size: 14px; color: #777;">Signature & Stamp</p> {% endcomment %}
+        </div>
+        <br><br>
+        {% endfor %}
+    </div>
+</div>
+<br><br><br>
+
+{% endblock %}

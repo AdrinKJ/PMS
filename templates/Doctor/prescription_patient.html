@@ -1,0 +1,99 @@
+{% extends 'Doctor/common.html' %}
+{% load static %}
+{% block content %}
+
+<h2 class="mt-4">Create Prescription</h2>
+
+<div class="card mt-4">
+  <div class="card-body">
+   
+   
+      <hr>
+      <form method="POST">
+          {% csrf_token %}
+  
+          <!-- Patient Details -->
+          <div class="mb-3">
+              <label for="patient" class="form-label"><strong>Patient Name</strong></label>
+              <input type="text" id="patient" class="form-control" value="{{ appointment.uid.name }}" readonly>
+          </div>
+  
+          <!-- Pharmacist Selection -->
+          <div class="mb-3">
+              <label for="pharmacist" class="form-label"><strong>Select Pharmacist</strong></label>
+              <select id="pharmacist" name="pharmacist" class="form-select" required>
+                  <option value="">Select Pharmacist</option>
+                  {% for pharmacist in pharmacists %}
+                  <option value="{{ pharmacist.id }}">{{ pharmacist.name }}</option>
+                  {% endfor %}
+              </select>
+          </div>
+      
+      <div class="mb-3">
+        <label for="medicines" class="form-label">Medicines</label>
+        <textarea name="medicines" class="form-control" id="medicines" rows="3" required></textarea>
+        {% comment %} <small class="form-text text-muted">Enter medicines as a comma-separated list (e.g., Paracetamol, Ibuprofen).</small> {% endcomment %}
+      </div>
+      
+      <div class="mb-3">
+        <label for="instructions" class="form-label">Additional Instructions</label>
+        <textarea name="instructions" class="form-control" id="instructions" rows="3"></textarea>
+      </div>
+      
+      <button type="submit" class="btn btn-primary">Create Prescription</button>
+     
+    </form>
+  </div>
+</div>
+
+
+{% comment %} {% extends 'Doctor/common.html' %}
+{% load static %}
+{% block header %}
+<br><br><br><br>
+
+<div class="container mt-4">
+    <h2 class="text-center">Create Prescription</h2>
+    <hr>
+    <form method="POST">
+        {% csrf_token %}
+
+        <!-- Patient Details -->
+        <div class="mb-3">
+            <label for="patient" class="form-label"><strong>Patient Name</strong></label>
+            <input type="text" id="patient" class="form-control" value="{{ appointment.patient.name }}" readonly>
+        </div>
+
+        <!-- Pharmacist Selection -->
+        <div class="mb-3">
+            <label for="pharmacist" class="form-label"><strong>Select Pharmacist</strong></label>
+            <select id="pharmacist" name="pharmacist" class="form-select" required>
+                <option value="">Select Pharmacist</option>
+                {% for pharmacist in pharmacists %}
+                <option value="{{ pharmacist.id }}">{{ pharmacist.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <!-- Medicines -->
+        <div class="mb-3">
+            <label for="medicines" class="form-label"><strong>Medicines</strong></label>
+            <input type="text" id="medicines" name="medicines" class="form-control" placeholder="Enter medicines" required>
+        </div>
+
+        <!-- Instructions -->
+        <div class="mb-3">
+            <label for="instructions" class="form-label"><strong>Instructions</strong></label>
+            <textarea id="instructions" name="instructions" class="form-control" rows="4" placeholder="Enter instructions" required></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Create Prescription</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %} {% endcomment %}
+
+{% endblock %}
