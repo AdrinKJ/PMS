@@ -5,16 +5,19 @@ import pickle
 import numpy as np
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Dropout
-from tensorflow.keras.optimizers.legacy import SGD
+from tensorflow.keras.optimizers import SGD
 from tensorflow.keras.optimizers.schedules import ExponentialDecay
 import random
+
+import re
+
 
 lr_schedule = ExponentialDecay(
     initial_learning_rate=0.01,
     decay_steps=10000,
     decay_rate=0.9)
 
-# Use the learning rate schedule in the optimizer
+# Instantiate SGD with a schedule
 sgd = SGD(learning_rate=lr_schedule, momentum=0.9, nesterov=True)
 
 # Initialize the lemmatizer
@@ -35,7 +38,7 @@ intents = json.loads(data_file)
 # Data preprocessing
 for intent in intents['intents']:
     for pattern in intent['patterns']:
-        w = nltk.word_tokenize(pattern)
+        w = re.findall(r"\b\w+\b", pattern.lower())
         words.extend(w)
         documents.append((w, intent['tag']))
         if intent['tag'] not in classes:
@@ -84,6 +87,10 @@ model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy
 
 # Train model
 model.fit(train_x, train_y, epochs=200, batch_size=5, verbose=1)
+
+# Save out the vocabulary and class label lists
+pickle.dump(words,   open('words.pkl',   'wb'))
+pickle.dump(classes, open('classes.pkl', 'wb'))
 
 # Save model
 
