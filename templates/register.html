@@ -1,117 +1,130 @@
 {% extends "common.html" %}
 {% block content %}
-        {% load static %}
-        <div class="back-to-home rounded d-none d-sm-block">
-            <a href="index.html" class="btn btn-icon btn-primary"><i data-feather="home" class="icons"></i></a>
-        </div>
+{% load static %}
+<div class="back-to-home rounded d-none d-sm-block">
+    <a href="" class="btn btn-icon btn-primary"><i data-feather="arrow-up" class="icons"></i></a>
+</div>
 
-        <!-- Hero Start -->
-        <section class="bg-half-150 d-table w-100 bg-light" style="background: url('{% static '/assets/images/bg/bg-lines-one.png' %}') center;">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-9 col-md-12">
-                        <img src="../assets/images/logo-dark.png" height="22" class="mx-auto d-block" alt="">
-                        <div class="card login-page shadow mt-4 rounded border-0">
-                            <div class="card-body">
-                                <h4 class="text-center">Sign Up</h4>   
-                                <form  method="POST" class="login-form mt-4" enctype="multipart/form-data">
-                                    {% csrf_token %}
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="mb-3">                                               
-                                                <label class="form-label">Name <span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" placeholder="First Name" name="name" required="">
-                                            </div>
-                                        </div>
-                                       
-                                        <div class="col-md-12">
-                                            <div class="mb-3">
-                                                <label class="form-label">Your Email <span class="text-danger">*</span></label>
-                                                <input type="email" class="form-control" placeholder="Email" name="email" required="">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="mb-3">
-                                                <label class="form-label">Password <span class="text-danger">*</span></label>
-                                                <input type="password" class="form-control" id="inputPassword" placeholder="Password" required
-                                                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                                                title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
-                                                name="password">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="mb-3">
-                                                <label class="form-label">Phone <span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" name="phone" placeholder="Phone" required="">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="mb-3">
-                                                <label class="form-label">Address <span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" name="address" placeholder="Address" required="">
-                                            </div>
-                                        </div>
-                                        
-                                        
-                                        <div class="col-md-12">
-                                            <div class="mb-3">
-                                                <label class="form-label">Age <span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" name="age" placeholder="Age" required="">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="mb-3">
-                                                <label class="form-label">Gender <span class="text-danger">*</span></label>
-                                                <input type="text" name="gender" class="form-control" placeholder="Gender" required="">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="mb-3">
-                                                <label class="form-label">Blood Group <span class="text-danger">*</span></label>
-                                                <input type="text" name="blood_group" class="form-control" placeholder="Blood Group" required="">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="mb-3">
-                                                <label class="form-label">Image<span class="text-danger">*</span></label>
-                                                <input type="file" name="image" class="form-control" placeholder="image" required="">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="d-grid">
-                                                <button class="btn btn-primary">Register</button>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-12 mt-3 text-center">
-                                            <h6 class="text-muted">Already have an account ?</h6>
-                                        </div><!--end col-->
-                                        
-                                        <div class="col-6 mt-7">
-                                            <div class="d-grid">
-                                                <a href="/login" class="btn btn-soft-primary"><i class="uil uil-facebook"></i> SiginIn</a>
-                                            </div>
-                                        </div><!--end col-->
-                                        
-                                        {% comment %} <div class="col-6 mt-3">
-                                            <div class="d-grid">
-                                                <a href="javascript:void(0)" class="btn btn-soft-primary"><i class="uil uil-google"></i> Google</a>
-                                            </div>
-                                        </div><!--end col-->
-
-                                        <div class="mx-auto">
-                                            <p class="mb-0 mt-3"><small class="text-dark me-2"></small> <a href="login.html" class="text-dark fw-bold">Sign in</a></p>
-                                        </div> {% endcomment %}
+<!-- Hero Start -->
+<section class="bg-half-150 d-table w-100 bg-light"
+    style="background: url('{% static '/assets/images/bg/bg-lines-one.png' %}') center;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-9 col-md-12">
+                <img src="../assets/images/logo-dark.png" height="22" class="mx-auto d-block" alt="">
+                <div class="card login-page shadow mt-4 rounded border-0">
+                    <div class="card-body">
+                        <h4 class="text-center">Sign Up</h4>
+                        <form method="POST" class="login-form mt-4" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="mb-3">
+                                        <label class="form-label">Name <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" placeholder="First Name" name="name"
+                                            required="">
                                     </div>
-                                </form>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="mb-3">
+                                        <label class="form-label">Your Email <span class="text-danger">*</span></label>
+                                        <input type="email" class="form-control" placeholder="Email" name="email"
+                                            required="">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="mb-3">
+                                        <label class="form-label">Password <span class="text-danger">*</span></label>
+                                        <input type="password" class="form-control" id="inputPassword"
+                                            placeholder="Password" required
+                                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                                            name="password">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="mb-3">
+                                        <label class="form-label">Phone <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="phone" placeholder="Phone"
+                                            required="">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="mb-3">
+                                        <label class="form-label">Address <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="address" placeholder="Address"
+                                            required="">
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-12">
+                                    <div class="mb-3">
+                                        <label class="form-label">Age <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" name="age" placeholder="Age"
+                                            required="">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="mb-3">
+                                        <label class="form-label">Gender <span class="text-danger">*</span></label>
+                                        <input type="text" name="gender" class="form-control" placeholder="Gender"
+                                            required="">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="mb-3">
+                                        <label class="form-label">Blood Group <span class="text-danger">*</span></label>
+                                        <input type="text" name="blood_group" class="form-control"
+                                            placeholder="Blood Group" required="">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="mb-3">
+                                        <label class="form-label">Image<span class="text-danger">*</span></label>
+                                        <input type="file" name="image" class="form-control" placeholder="image"
+                                            required="">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="d-grid">
+                                        <button class="btn btn-primary">Register</button>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12 mt-3 text-center">
+                                    <h6 class="text-muted">Already have an account ?</h6>
+                                </div><!--end col-->
+
+                                <div class="col-6 mt-7">
+                                    <div class="d-grid">
+                                        <a href="/login" class="btn btn-soft-primary"><i class="uil uil-user"></i>
+                                            Sigin In</a>
+                                    </div>
+                                </div><!--end col-->
+
+                                {% comment %} <div class="col-6 mt-3">
+                                    <div class="d-grid">
+                                        <a href="javascript:void(0)" class="btn btn-soft-primary"><i
+                                                class="uil uil-google"></i> Google</a>
+                                    </div>
+                                </div><!--end col-->
+
+                                <div class="mx-auto">
+                                    <p class="mb-0 mt-3"><small class="text-dark me-2"></small> <a href="login.html"
+                                            class="text-dark fw-bold">Sign in</a></p>
+                                </div> {% endcomment %}
                             </div>
-                        </div><!---->
-                    </div> <!--end col-->
-                </div><!--end row-->
-            </div> <!--end container-->
-        </section><!--end section-->
-        <!-- Hero End -->
-        
-        <!-- javascript -->
-       
-{% endblock  %}
+                        </form>
+                    </div>
+                </div><!---->
+            </div> <!--end col-->
+        </div><!--end row-->
+    </div> <!--end container-->
+</section><!--end section-->
+<!-- Hero End -->
+
+<!-- javascript -->
+
+{% endblock %}

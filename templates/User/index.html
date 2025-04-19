@@ -3,7 +3,6 @@
 <html lang="en" dir="ltr">
 
     
-<!-- Mirrored from shreethemes.in/doctris/layouts/landing/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 19 Feb 2025 06:57:00 GMT -->
 <head>
         <meta charset="utf-8" />
         <title>Doctris - Doctor Appointment Booking System</title>
@@ -28,9 +27,19 @@
         <!-- Style Css-->
         <link href="{% static '/assets/css/style.min.css' %}" class="theme-opt" rel="stylesheet" type="text/css" />
 
-    </head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" />
+		
+		<!-- Unicons (Iconscout) -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
 
-    <body>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        integrity="sha384‑EVSTQN3/azprG1Anm3QDgpJL3Gns6m+0GtTOYOmeDJmC1og6I0XrCJJ0yVNp+0iQ" crossorigin="anonymous" />
+
+</head>
+
+<body>
         {% for m in messages %}
         <script>
             alert('{{m}}');
@@ -167,11 +176,12 @@
                     <div class="col-12">
                         <div class="heading-title">
                             <img src="{% static '/assets/images/logo-icon.png' %}" height="50" alt="">
-                            <h4 class="display-4 fw-bold text-white title-dark mt-3 mb-4">Meet The <br> Best Doctor</h4>
-                            <p class="para-desc text-white-50 mb-0">Great doctor if you need your family member to get effective immediate assistance, emergency treatment or a simple consultation.</p>
-                            
+                            <h4 class="display-4 fw-bold text-white title-dark mt-3 mb-4">Meet The <br> Best Doctors</h4>
+                            <p class="para-desc text-white-50 mb-0">Find trusted physicians, choose a time that fits
+                                your schedule, and get personalized care—all in one simple, AI‑powered platform. Book Your
+                                Doctor’s Appointment in Seconds</p>
                             <div class="mt-4 pt-2">
-                                <a class="btn btn-primary">Make Appointment</a>
+                                <a class="btn btn-primary">Make an Appointment</a>
                                 <p class="text-white-50 mb-0 mt-2">T&C apply. Please read <a href="/book_appoinment" class="text-white-50">Terms and Conditions <i class="ri-arrow-right-line align-middle"></i></a></p>
                             </div>
                         </div>
@@ -190,40 +200,43 @@
                             <div class="card border-0 bg-light p-4">
                                 <i class="ri-heart-pulse-fill text-primary h2 mb-0"></i>
                                 <h5 class="mt-1">Emergency Cases</h5>
-                                <p class="text-muted mt-2">This is required when, for example, the is not yet available. Dummy text is also known as 'fill text'.</p>
-                                <a  class="text-primary">Read More <i class="ri-arrow-right-line align-middle"></i></a>
-                            </div>
-                            
-                            <div class="card border-0 p-4">
-                                <i class="ri-dossier-fill text-primary h2 mb-0"></i>
-                                <h5 class="mt-1">Doctors Timetable</h5>
-                                <p class="text-muted mt-2">This is required when, for example, the is not yet available. Dummy text is also known as 'fill text'.</p>
-                                <a  class="text-primary">Read More <i class="ri-arrow-right-line align-middle"></i></a>
-                            </div>
-
-                            <div class="card border-0 bg-light p-4">
-                                <i class="ri-time-fill text-primary h2 mb-0"></i>
-                                <h5 class="mt-1">Opening Hours</h5>
-                                <ul class="list-unstyled mt-2">
-                                    <li class="d-flex justify-content-between">
-                                        <p class="text-muted mb-0">Monday - Friday</p>
-                                        <p class="text-primary mb-0">8.00 - 20.00</p>
-                                    </li>
-                                    <li class="d-flex justify-content-between">
-                                        <p class="text-muted mb-0">Saturday</p>
-                                        <p class="text-primary mb-0">8.00 - 18.00</p>
-                                    </li>
-                                    <li class="d-flex justify-content-between">
-                                        <p class="text-muted mb-0">Sunday</p>
-                                        <p class="text-primary mb-0">8.00 - 14.00</p>
-                                    </li>
-                                </ul>
-                                <a href="departments.html" class="text-primary">Read More <i class="ri-arrow-right-line align-middle"></i></a>
-                            </div>
+                            <p class="text-muted mt-2">When minutes matter, our network of doctors is on call 24/7. Get
+                                immediate guidance and fast track to the nearest in‑network pharmacy for critical
+                                medications.</p>
+                            <a class="text-primary">Read More <i class="ri-arrow-right-line align-middle"></i></a>
                         </div>
-                    </div><!--end col-->
-                </div><!--end row-->
-            </div><!--end container-->
+
+                        <div class="card border-0 p-4">
+                            <i class="ri-dossier-fill text-primary h2 mb-0"></i>
+                            <h5 class="mt-1">Doctors Timetable</h5>
+                            <p class="text-muted mt-2">View up‑to‑the‑minute schedules for every specialist. Filter by
+                                date, location, or expertise to lock in your ideal appointment in just a few clicks.</p>
+                            <a class="text-primary">Read More <i class="ri-arrow-right-line align-middle"></i></a>
+                        </div>
+
+                        <div class="card border-0 bg-light p-4">
+                            <i class="ri-time-fill text-primary h2 mb-0"></i>
+                            <h5 class="mt-1">Opening Hours</h5>
+                            <ul class="list-unstyled mt-2">
+                                <li class="d-flex justify-content-between">
+                                    <p class="text-muted mb-0">Monday - Friday</p>
+                                    <p class="text-primary mb-0">8.00 - 20.00</p>
+                                </li>
+                                <li class="d-flex justify-content-between">
+                                    <p class="text-muted mb-0">Saturday</p>
+                                    <p class="text-primary mb-0">8.00 - 18.00</p>
+                                </li>
+                                <li class="d-flex justify-content-between">
+                                    <p class="text-muted mb-0">Sunday</p>
+                                    <p class="text-primary mb-0">8.00 - 14.00</p>
+                                </li>
+                            </ul>
+                            <a class="text-primary">Read More <i class="ri-arrow-right-line align-middle"></i></a>
+                        </div>
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
+        </div><!--end container-->
 
             <div class="container mt-100 mt-60">
                 <div class="row align-items-center">
@@ -242,9 +255,14 @@
                         <div class="ms-lg-4">
                             <div class="section-title">
                                 <h4 class="title mb-4">About Our Treatments</h4>
-                                <p class="text-muted para-desc">Great doctor if you need your family member to get effective immediate assistance, examination, emergency treatment or a simple consultation. Thank you.</p>
-                                <p class="text-muted para-desc mb-0">The most well-known dummy text is the 'Lorem Ipsum', which is said to have originated in the 16th century. Lorem Ipsum is composed in a pseudo-Latin language which more or less corresponds to 'proper' Latin. It contains a series of real Latin words.</p>
-                            </div>
+                            <p class="text-muted para-desc">Doctris was designed from the ground
+                                up to connect every participant in the healthcare journey. Doctors can prescribe with
+                                confidence, patients stay informed, and pharmacists never miss a refill. Secure,
+                                HIPAA‑compliant, and accessible on any device, it’s the only tool you need for modern
+                                healthcare delivery.</p>
+                            <p class="text-muted para-desc mb-0">From intuitive dashboards to real‑time analytics, our
+                                system ensures every step—from prescription to pickup—is transparent, efficient, and
+                                patient‑centric.</p></div>
 
                             <div class="mt-4">
                                 <a href="aboutus.html" class="btn btn-primary">Read More <i class="ri-arrow-right-line align-middle"></i></a>
@@ -260,8 +278,9 @@
                         <div class="section-title mb-4 pb-2 text-center">
                             <span class="badge rounded-pill bg-soft-primary mb-3">Departments</span>
                             <h4 class="title mb-4">Our Medical Services</h4>
-                            <p class="text-muted mx-auto para-desc mb-0">Great doctor if you need your family member to get effective immediate assistance, emergency treatment or a simple consultation.</p>
-                        </div>
+                            <p class="text-muted mx-auto para-desc mb-0">We offer an integrated suite of specialties to meet
+                                every healthcare need—delivered with the same commitment to quality, compassion, and
+                                innovation.</p></div>
                     </div><!--end col-->
                 </div><!--end row-->
 
@@ -272,100 +291,108 @@
                                 <i class="ri-eye-fill h3 mb-0"></i>
                             </div>
                             <div class="card-body p-0 mt-3">
-                                <a href="departments.html" class="title text-dark h5">Eye Care</a>
-                                <p class="text-muted mt-3">There is now an abundance of readable dummy texts required purely to fill a space.</p>
-                                <a href="departments.html" class="link">Read More <i class="ri-arrow-right-line align-middle"></i></a>
+                                <a class="title text-dark h5">Eye Care</a>
+                                <p class="text-muted mt-3">Precision vision screenings and advanced treatments to keep your
+                                    eyes healthy and your vision crystal clear.</p>
+                                <a class="link">Read More <i class="ri-arrow-right-line align-middle"></i></a>
                             </div>
                         </div>
                     </div><!--end col-->
-
+    
                     <div class="col-xl-3 col-md-4 col-12 mt-5">
                         <div class="card features feature-primary border-0">
                             <div class="icon text-center rounded-md">
                                 <i class="ri-psychotherapy-fill h3 mb-0"></i>
                             </div>
                             <div class="card-body p-0 mt-3">
-                                <a href="departments.html" class="title text-dark h5">Psychotherapy</a>
-                                <p class="text-muted mt-3">There is now an abundance of readable dummy texts required purely to fill a space.</p>
-                                <a href="departments.html" class="link">Read More <i class="ri-arrow-right-line align-middle"></i></a>
+                                <h5 class="title text-dark h5">Psychotherapy</h5>
+                                <p class="text-muted mt-3">Compassionate, evidence‑based counseling to help you navigate
+                                    life’s challenges and build emotional resilience.</p>
+                                <a class="link">Read More <i class="ri-arrow-right-line align-middle"></i></a>
                             </div>
                         </div>
                     </div><!--end col-->
-
+    
                     <div class="col-xl-3 col-md-4 col-12 mt-5">
                         <div class="card features feature-primary border-0">
                             <div class="icon text-center rounded-md">
                                 <i class="ri-stethoscope-fill h3 mb-0"></i>
                             </div>
                             <div class="card-body p-0 mt-3">
-                                <a href="departments.html" class="title text-dark h5">Primary Care</a>
-                                <p class="text-muted mt-3">There is now an abundance of readable dummy texts required purely to fill a space.</p>
-                                <a href="departments.html" class="link">Read More <i class="ri-arrow-right-line align-middle"></i></a>
+                                <h5 class="title text-dark h5">Primary Care</h5>
+                                <p class="text-muted mt-3">Your medical home for preventive check‑ups, chronic disease
+                                    management, and seamless referral coordination.</p>
+                                <a class="link">Read More <i class="ri-arrow-right-line align-middle"></i></a>
                             </div>
                         </div>
                     </div><!--end col-->
-
+    
                     <div class="col-xl-3 col-md-4 col-12 mt-5">
                         <div class="card features feature-primary border-0">
                             <div class="icon text-center rounded-md">
                                 <i class="ri-capsule-fill h3 mb-0"></i>
                             </div>
                             <div class="card-body p-0 mt-3">
-                                <a href="departments.html" class="title text-dark h5">Dental Care</a>
-                                <p class="text-muted mt-3">There is now an abundance of readable dummy texts required purely to fill a space.</p>
-                                <a href="departments.html" class="link">Read More <i class="ri-arrow-right-line align-middle"></i></a>
+                                <h5 class="title text-dark h5">Dental Care</h5>
+                                <p class="text-muted mt-3">Comprehensive oral health solutions—from cleanings to cosmetic
+                                    work—delivered with comfort and expertise.</p>
+                                <a class="link">Read More <i class="ri-arrow-right-line align-middle"></i></a>
                             </div>
                         </div>
                     </div><!--end col-->
-                    
+    
                     <div class="col-xl-3 col-md-4 col-12 mt-5">
                         <div class="card features feature-primary border-0">
                             <div class="icon text-center rounded-md">
                                 <i class="ri-microscope-fill h3 mb-0"></i>
                             </div>
                             <div class="card-body p-0 mt-3">
-                                <a href="departments.html" class="title text-dark h5">Orthopedic</a>
-                                <p class="text-muted mt-3">There is now an abundance of readable dummy texts required purely to fill a space.</p>
-                                <a href="departments.html" class="link">Read More <i class="ri-arrow-right-line align-middle"></i></a>
+                                <h5 class="title text-dark h5">Orthopedic</h5>
+                                <p class="text-muted mt-3">Personalized joint, bone, and muscle care—surgical or
+                                    non‑surgical—to get you moving pain‑free again.</p>
+                                <a class="link">Read More <i class="ri-arrow-right-line align-middle"></i></a>
                             </div>
                         </div>
                     </div><!--end col-->
-
+    
                     <div class="col-xl-3 col-md-4 col-12 mt-5">
                         <div class="card features feature-primary border-0">
                             <div class="icon text-center rounded-md">
                                 <i class="ri-pulse-fill h3 mb-0"></i>
                             </div>
                             <div class="card-body p-0 mt-3">
-                                <a href="departments.html" class="title text-dark h5">Cardiology</a>
-                                <p class="text-muted mt-3">There is now an abundance of readable dummy texts required purely to fill a space.</p>
-                                <a href="departments.html" class="link">Read More <i class="ri-arrow-right-line align-middle"></i></a>
+                                <h5 class="title text-dark h5">Cardiology</h5>
+                                <p class="text-muted mt-3">State‑of‑the‑art heart diagnostics and treatment plans crafted by
+                                    board‑certified cardiologists.</p>
+                                <a class="link">Read More <i class="ri-arrow-right-line align-middle"></i></a>
                             </div>
                         </div>
                     </div><!--end col-->
-
+    
                     <div class="col-xl-3 col-md-4 col-12 mt-5">
                         <div class="card features feature-primary border-0">
                             <div class="icon text-center rounded-md">
                                 <i class="ri-empathize-fill h3 mb-0"></i>
                             </div>
                             <div class="card-body p-0 mt-3">
-                                <a href="departments.html" class="title text-dark h5">Gynecology</a>
-                                <p class="text-muted mt-3">There is now an abundance of readable dummy texts required purely to fill a space.</p>
-                                <a href="departments.html" class="link">Read More <i class="ri-arrow-right-line align-middle"></i></a>
+                                <h5 class="title text-dark h5">Gynecology</h5>
+                                <p class="text-muted mt-3">Full‑spectrum women’s health services—from annual exams to
+                                    prenatal and minimally invasive care.</p>
+                                <a class="link">Read More <i class="ri-arrow-right-line align-middle"></i></a>
                             </div>
                         </div>
                     </div><!--end col-->
-
+    
                     <div class="col-xl-3 col-md-4 col-12 mt-5">
                         <div class="card features feature-primary border-0">
                             <div class="icon text-center rounded-md">
                                 <i class="ri-mind-map h3 mb-0"></i>
                             </div>
                             <div class="card-body p-0 mt-3">
-                                <a href="departments.html" class="title text-dark h5">Neurology</a>
-                                <p class="text-muted mt-3">There is now an abundance of readable dummy texts required purely to fill a space.</p>
-                                <a href="departments.html" class="link">Read More <i class="ri-arrow-right-line align-middle"></i></a>
+                                <h5 class="title text-dark h5">Neurology</h5>
+                                <p class="text-muted mt-3">Cutting‑edge evaluation and management of neurological disorders
+                                    backed by the latest research and imaging.</p>
+                                <a class="link">Read More <i class="ri-arrow-right-line align-middle"></i></a>
                             </div>
                         </div>
                     </div><!--end col-->
@@ -380,13 +407,17 @@
                 <div class="row justify-content-center">
                     <div class="col-12">
                         <div class="section-title text-center mb-4 pb-2">
-                            <span class="badge rounded-pill bg-soft-primary mb-3">Availability</span>
-                            <h4 class="title mb-4">Doctors Time Table</h4>
-                            <p class="text-muted mx-auto para-desc mb-0">Great doctor if you need your family member to get effective immediate assistance, emergency treatment or a simple consultation.</p>
-                        </div>
-                    </div><!--end col-->
-                </div><!--end row-->
-            </div><!--end container-->
+                            <span class="badge rounded-pill bg-soft-primary mb-3">From the CMO</span>
+                        <h4 class="title mb-4">Built for Collaborative Care</h4>
+                        <p class="text-muted mx-auto para-desc mb-0">“Since adopting the system, our prescription
+                            turnaround time dropped by 50%, and patient satisfaction is at an all‑time high.”
+                            <br>—&nbsp; Dr.
+                            Priya Menon
+                        </p>
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
+        </div><!--end container-->
 
             {% comment %} <div class="container-fluid">
                 <div class="row">
@@ -727,18 +758,13 @@
                         <div class="video-solution-cta position-relative" style="z-index: 1;">
                             <div class="position-relative">
                                 <img src="{% static '/assets/images/bg/01.jpg' %}" class="img-fluid rounded-md shadow-lg" alt="">
-                                <div class="play-icon">
-                                    <a  data-type="youtube" data-id="yba7hPeTSjk" class="play-btn lightbox video-play-icon">
-                                        <i class="mdi mdi-play text-primary rounded-circle bg-white title-bg-dark shadow-lg"></i>
-                                    </a>
-                                </div>
                             </div>
 
                             <div class="content">
                                 <div class="row" id="counter">
                                     <div class="col-md-4 mt-4 pt-2">
                                         <div class="counter-box text-center">
-                                            <h1 class="mt-3 text-white title-dark"><span class="counter-value" data-target="99">10</span>%</h1>
+                                            <h1 class="mt-3 text-white title-dark"><span class="counter-value" data-target="99">98</span>%</h1>
                                             <h5 class="counter-head text-white title-dark mb-1">Positive feedback</h5>
                                             <p class="text-white-50 mb-0">From Doctors</p>
                                         </div><!--end counter box-->
@@ -746,7 +772,7 @@
                 
                                     <div class="col-md-4 mt-4 pt-2">
                                         <div class="counter-box text-center">
-                                            <h1 class="mt-3 text-white title-dark"><span class="counter-value" data-target="25">2</span>+</h1>
+                                            <h1 class="mt-3 text-white title-dark"><span class="counter-value" data-target="25">200</span>+</h1>
                                             <h5 class="counter-head text-white title-dark mb-1">Experienced Clinics</h5>
                                             <p class="text-white-50 mb-0">High Qualified</p>
                                         </div><!--end counter box-->
@@ -754,9 +780,9 @@
                 
                                     <div class="col-md-4 mt-4 pt-2">
                                         <div class="counter-box text-center">
-                                            <h1 class="mt-3 text-white title-dark"><span class="counter-value" data-target="1251">95</span>+</h1>
-                                            <h5 class="counter-head text-white title-dark mb-1">Questions & Answers</h5>
-                                            <p class="text-white-50 mb-0">Your Questions</p>
+                                            <h1 class="mt-3 text-white title-dark"><span class="counter-value" data-target="1251">9500</span>+</h1>
+                                            <h5 class="counter-head text-white title-dark mb-1">Appointments Booked</h5>
+                                            <p class="text-white-50 mb-0">Booking</p>
                                         </div><!--end counter box-->
                                     </div><!--end col-->
                                 </div><!--end row-->
@@ -775,97 +801,110 @@
                 <div class="row justify-content-center">
                     <div class="col-12">
                         <div class="section-title text-center mb-4 pb-2">
-                            <h4 class="title mb-4">Patients Says</h4>
-                            <p class="text-muted mx-auto para-desc mb-0">Great doctor if you need your family member to get effective immediate assistance, emergency treatment or a simple consultation.</p>
-                        </div>
-                    </div><!--end col-->
-                </div><!--end row-->
+                            <h4 class="title mb-4">What Our Users Say</h4>
+                        <p class="text-muted mx-auto para-desc mb-0"> We treat every patient like family—providing
+                            compassionate, personalized care and always being there with you through every step</p>
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
 
-                <div class="row justify-content-center">
-                    <div class="col-lg-8 mt-4 pt-2 text-center">
-                        <div class="client-review-slider">
-                            <div class="tiny-slide text-center">
-                                <p class="text-muted fw-normal fst-italic">" It seems that only fragments of the original text remain in the Lorem Ipsum texts used today. The most well-known dummy text is the 'Lorem Ipsum', which is said to have originated in the 16th century. "</p>
-                                <img src="{% static '/assets/images/client/01.jpg' %}" class="img-fluid avatar avatar-small rounded-circle mx-auto shadow my-3" alt="">
-                                <ul class="list-unstyled mb-0">
-                                    <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                                    <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                                    <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                                    <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                                    <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                                </ul>
-                                <h6 class="text-primary">- Thomas Israel <small class="text-muted">C.E.O</small></h6>
-                            </div><!--end customer testi-->
-                            
-                            <div class="tiny-slide text-center">
-                                <p class="text-muted fw-normal fst-italic">" The advantage of its Latin origin and the relative meaninglessness of Lorum Ipsum is that the text does not attract attention to itself or distract the viewer's attention from the layout. "</p>
-                                <img src="{% static '/assets/images/client/02.jpg' %}" class="img-fluid avatar avatar-small rounded-circle mx-auto shadow my-3" alt="">
-                                <ul class="list-unstyled mb-0">
-                                    <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                                    <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                                    <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                                    <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                                    <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                                </ul>
-                                <h6 class="text-primary">- Carl Oliver <small class="text-muted">P.A</small></h6>
-                            </div><!--end customer testi-->
-                            
-                            <div class="tiny-slide text-center">
-                                <p class="text-muted fw-normal fst-italic">" There is now an abundance of readable dummy texts. These are usually used when a text is required purely to fill a space. These alternatives to the classic Lorem Ipsum texts are often amusing and tell short, funny or nonsensical stories. "</p>
-                                <img src="{% static '/assets/images/client/03.jpg' %}" class="img-fluid avatar avatar-small rounded-circle mx-auto shadow my-3" alt="">
-                                <ul class="list-unstyled mb-0">
-                                    <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                                    <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                                    <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                                    <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                                    <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                                </ul>
-                                <h6 class="text-primary">- Barbara McIntosh <small class="text-muted">M.D</small></h6>
-                            </div><!--end customer testi-->
-                            
-                            <div class="tiny-slide text-center">
-                                <p class="text-muted fw-normal fst-italic">" According to most sources, Lorum Ipsum can be traced back to a text composed by Cicero in 45 BC. Allegedly, a Latin scholar established the origin of the text by compiling all the instances of the unusual word 'consectetur' he could find "</p>
-                                <img src="{% static '/assets/images/client/04.jpg' %}" class="img-fluid avatar avatar-small rounded-circle mx-auto shadow my-3" alt="">
-                                <ul class="list-unstyled mb-0">
-                                    <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                                    <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                                    <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                                    <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                                    <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                                </ul>
-                                <h6 class="text-primary">- Christa Smith <small class="text-muted">Manager</small></h6>
-                            </div><!--end customer testi-->
-                            
-                            <div class="tiny-slide text-center">
-                                <p class="text-muted fw-normal fst-italic">" It seems that only fragments of the original text remain in the Lorem Ipsum texts used today. The most well-known dummy text is the 'Lorem Ipsum', which is said to have originated in the 16th century. "</p>
-                                <img src="../assets/images/client/05.jpg" class="img-fluid avatar avatar-small rounded-circle mx-auto shadow my-3" alt="">
-                                <ul class="list-unstyled mb-0">
-                                    <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                                    <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                                    <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                                    <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                                    <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                                </ul>
-                                <h6 class="text-primary">- Dean Tolle <small class="text-muted">Developer</small></h6>
-                            </div><!--end customer testi-->
-                            
-                            <div class="tiny-slide text-center">
-                                <p class="text-muted fw-normal fst-italic">" It seems that only fragments of the original text remain in the Lorem Ipsum texts used today. One may speculate that over the course of time certain letters were added or deleted at various positions within the text. "</p>
-                                <img src="../assets/images/client/06.jpg" class="img-fluid avatar avatar-small rounded-circle mx-auto shadow my-3" alt="">
-                                <ul class="list-unstyled mb-0">
-                                    <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                                    <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                                    <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                                    <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                                    <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
-                                </ul>
-                                <h6 class="text-primary">- Jill Webb <small class="text-muted">Designer</small></h6>
-                            </div><!--end customer testi-->
-                        </div><!--end carousel-->
-                    </div><!--end col-->
-                </div><!--end row-->
-            </div><!--end container-->
+            <div class="row justify-content-center">
+                <div class="col-lg-8 mt-4 pt-2 text-center">
+                    <div class="client-review-slider">
+                        <div class="tiny-slide text-center">
+                            <img src="{% static '/assets/images/client/01.jpg' %}"
+                                class="img-fluid avatar avatar-small rounded-circle mx-auto shadow my-3" alt="">
+                            <ul class="list-unstyled mb-0">
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                            </ul>
+                            <p class="text-muted fw-normal fst-italic">“Booking an appointment online and getting
+                                instant confirmation has made managing my health so much easier.”</p>
+                            <h6 class="text-primary">- Thomas Israel <small class="text-muted">Patient</small></h6>
+                        </div><!--end customer testi-->
 
+                        <div class="tiny-slide text-center">
+                            <img src="{% static '/assets/images/client/02.jpg' %}"
+                                class="img-fluid avatar avatar-small rounded-circle mx-auto shadow my-3" alt="">
+                            <ul class="list-unstyled mb-0">
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                            </ul>
+                            <p class="text-muted fw-normal fst-italic">“I love having all my prescriptions and
+                                appointment history in one secure place—no more lost papers or forgotten details.”</p>
+                            <h6 class="text-primary">- Sneha Patel <small class="text-muted">P.A</small></h6>
+                        </div><!--end customer testi-->
+
+                        <div class="tiny-slide text-center">
+                            <img src="{% static '/assets/images/client/03.jpg' %}"
+                                class="img-fluid avatar avatar-small rounded-circle mx-auto shadow my-3" alt="">
+                            <ul class="list-unstyled mb-0">
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                            </ul>
+                            <p class="text-muted fw-normal fst-italic">“The e‑prescription integration saves me so much
+                                time—no more faxes or phone calls, just click and send.”</p>
+                            <h6 class="text-primary">- Barbara McIntosh <small class="text-muted">M.D</small></h6>
+                        </div><!--end customer testi-->
+
+                        <div class="tiny-slide text-center">
+                            <img src="{% static '/assets/images/client/04.jpg' %}"
+                                class="img-fluid avatar avatar-small rounded-circle mx-auto shadow my-3" alt="">
+                            <ul class="list-unstyled mb-0">
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                            </ul>
+                            <p class="text-muted fw-normal fst-italic">“Our admin team finally has clear audit trails
+                                for every prescription and appointment—compliance has never been easier.”</p>
+                            <h6 class="text-primary">- Christa Smith <small class="text-muted">Manager</small></h6>
+                        </div><!--end customer testi-->
+
+                        <div class="tiny-slide text-center">
+                            <img src="{% static '/assets/images/client/05.jpg' %}"
+                                class="img-fluid avatar avatar-small rounded-circle mx-auto shadow my-3" alt="">
+                            <ul class="list-unstyled mb-0">
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                            </ul>
+                            <p class="text-muted fw-normal fst-italic">“Even as someone who isn’t tech‑savvy, the portal
+                                is intuitive and secure—I feel confident managing my own care.”</p>
+                            <h6 class="text-primary">- Priya Sharma <small class="text-muted">Parent</small></h6>
+                        </div><!--end customer testi-->
+
+                        <div class="tiny-slide text-center">
+                            <img src="{% static '/assets/images/client/06.jpg' %}"
+                                class="img-fluid avatar avatar-small rounded-circle mx-auto shadow my-3" alt="">
+                            <ul class="list-unstyled mb-0">
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                            </ul>
+                            <p class="text-muted fw-normal fst-italic">“Our IT team loves the robust API—connecting with
+                                our existing systems was seamless.”
+                            </p>
+                            <h6 class="text-primary">- Jill Webb <small class="text-muted">Developer</small></h6>
+                        </div><!--end customer testi-->
+                    </div><!--end carousel-->
+                </div><!--end col-->
+            </div><!--end row-->
+        </div><!--end container-->
             <div class="container mt-100 mt-60">
                 <div class="row justify-content-center">
                     <div class="col-12">
@@ -982,7 +1021,10 @@
                         <a href="#" class="logo-footer">
                             <img src="{% static '../assets/images/logo-light.png' %}" height="22" alt="">
                         </a>
-                        <p class="mt-4 me-xl-5">Great doctor if you need your family member to get effective immediate assistance, emergency treatment or a simple consultation.</p>
+                        <p class="mt-4 me-xl-5">Doctris unifies doctors, patients, and pharmacists in one secure, intuitive
+                            platform, streamlining appointments, e‑prescriptions, and inventory management. Built on
+                            cutting‑edge AI and modern web technologies, it ensures efficient, patient‑centered care every
+                            step of the way.</p>
                     </div><!--end col-->
 
                     <div class="col-xl-7 col-lg-8 col-md-12">
@@ -1149,6 +1191,11 @@
         <script src="{% static '../assets/libs/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
         <script src="{% static '../assets/js/plugins.init.js' %}"></script>
         <script src="{% static '../assets/js/app.js' %}"></script>
+        <!-- Feather Icons JS -->
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+        feather.replace({ 'aria-hidden': 'true' })
+    </script>
     </body>
 
 <!-- Mirrored from shreethemes.in/doctris/layouts/landing/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 19 Feb 2025 06:57:29 GMT -->
