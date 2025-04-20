@@ -25,19 +25,19 @@ def login(request):
         user = authenticate(username=email,password=password)
         if user is not None:
             if user.usertype == 'admin':
-                messages.success(request, 'Welcome to Medical')
+                messages.success(request, 'Welcome to Doctris')
                 return redirect('/adminHome')
             elif user.usertype == 'User':
                 request.session['uid'] = user.id
-                messages.success(request, 'Welcome to Medical')
+                messages.success(request, 'Welcome to Doctris')
                 return redirect('/userHome')
             elif user.usertype == 'Doctor':
                 request.session['uid'] = user.id
-                messages.success(request, 'Welcome to Medical ')
+                messages.success(request, 'Welcome to Doctris ')
                 return redirect('/doctorHome')
             elif user.usertype == 'Pharmacist':
                 request.session['uid'] = user.id
-                messages.success(request, 'Welcome to Medical')
+                messages.success(request, 'Welcome to Doctris')
                 return redirect('/pharmaHome')
             else:
                 messages.info(request, "type Not Defined")
